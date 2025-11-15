@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome, {{ student.student_name }}!</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 10 4px 8px black;
+            padding: 30px;
+        }
+        .header {
+            text-align: center;
+            background-color: #1E3A8A;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .details {
+            background-color: #dff0ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .details p {
+            font-size: 15px;
+            margin: 5px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to ABC College of Engineering, {{ student.student_name }}!</h1>
+        </div>
+        <div class="content">
+            <p>Congratulations on becoming a part of our academic community! As a student here, you now have access to a wealth of resources and a support network dedicated to your success.</p>
+            <p>Below, you will find your login credentials for accessing the student portal, where you can check your courses, access materials, and stay connected with faculty and peers.</p>
+            <p>Your seat allocated for <b>{{student.course}}</b> of the acedemic year<b>{{student.session}}</b></p>
+            <div class="details">
+                <p><strong>Username:</strong> {{ student.student_name }}</p>
+                <p><strong>Password:</strong> {{ password }}</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Best wishes for an exciting academic journey ahead!</p>
+            <p>Warm regards,</p>
+            <p>The ABC College Team</p>
+        </div>
+    </div>
+</body>
+</html>
