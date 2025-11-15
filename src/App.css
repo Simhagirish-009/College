@@ -1,0 +1,373 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.Toastify__toast {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.root {
+  background-color: #f8f8f8;
+}
+/* Nav Bar ------------------------------------------------------*/
+.navbar {
+  background: linear-gradient(to right, #1e3a8a, #3174e0);
+}
+
+/* Home -----------------------------------------------------------*/
+.page-container {
+  padding: 0px;
+  margin: 0px;
+}
+
+.main-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.programs-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  width: 30%;
+}
+
+.events-section {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Footer ----------------------------------------------------------------*/
+.footer {
+    background: linear-gradient(to right, #1E3A8A, #3174e0);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Forms----------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  .otp-input {
+    max-width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .otp-input {
+    max-width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+
+.form-background {
+  background-image: url("../../frontend/src/assets/images/Form-background.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
+  margin-top: 100px;
+  width: 40%;
+  box-shadow: 5px 5px 10px 5px rgb(57, 57, 57);
+}
+
+.form .form-group {
+  padding: 15px;
+}
+
+
+.form-control,
+.form-select {
+  border: 4px solid #dde9ff !important;
+}
+.form-group .field {
+  height: 40px;
+}
+
+.form-group .btn {
+  color: white;
+  padding-left: 200px;
+  padding-right: 200px;
+  background: linear-gradient(to right, #1e3a8a, #3174e0);
+  transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s;
+}
+
+.form-group .btn:hover {
+  background-color: #e9f0fc;
+  background: transparent;
+  font-size: 19px;
+  color: #1e3a8a;
+  border: 1px solid #1e3a8a;
+}
+
+.card .card-header {
+  color: white;
+  padding: 20px;
+  background: linear-gradient(to right, #1e3a8a, #3174e0);
+}
+.card {
+  box-shadow: 2px 2px 12px 2px rgb(96, 96, 96);
+}
+.card-body::-webkit-scrollbar {
+  width: 9px;
+}
+.card-body::-webkit-scrollbar-track {
+  background: white;
+}
+.card-body::-webkit-scrollbar-thumb {
+  border: 1px solid white;
+}
+
+.card .card-body {
+  color: #1e3a8a;
+  padding-top: 30px;
+  font-size: 18px;
+}
+
+/* About -------------------------------------------------------------*/
+.about-main {
+  padding: 20px;
+}
+.about-second {
+  font-size: 18px;
+  line-height: 30px;
+}
+.sec-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.para {
+  width: 60%;
+  font-size: 18px;
+  line-height: 40px;
+}
+.image {
+  width: 40%;
+  height: 300px;
+  border-radius: 15px;
+}
+.about-bottom {
+  font-size: 18px;
+  line-height: 40px;
+  padding: 30px;
+}
+
+/* Admin  */
+h3 a {
+  text-decoration: none;
+}
+
+h3 a:hover {
+  font-size: 35px;
+  transition: font-size 0.3s ease;
+}
+
+/* Side Nav Bar ---------------------------------------------------------------------*/
+.sidenav-container::-webkit-scrollbar {
+  width: 9px;
+}
+.sidenav-container::-webkit-scrollbar-track {
+  background: #efefef;
+}
+.sidenav-container::-webkit-scrollbar-thumb {
+  border: 1px solid #f1f1f1;
+}
+.sidenav-container {
+  display: flex;
+    width: 20%;
+    min-width: 250px;
+    background-color: white;
+    height: 100vh; 
+    min-height: 100vh;
+    width: 250px; 
+    overflow-y: scroll; 
+    z-index: 1000;
+}
+
+.sidenav-content {
+  width: 100%;
+  background-color: white;
+  /* background-color: #e9f0fc; */
+}
+
+ .sidenav-header {
+  color: #1e3a8a;
+  background-color: #e9f0fc; 
+  
+  border-bottom: 3px solid white;
+}
+
+.side-nav .nav-link {
+  color: #1e3a8a;
+  font-size: 18px;
+  padding-left: 60px;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 1px;
+  transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s; 
+ }
+
+.side-nav .nav-link:hover {
+  background: linear-gradient(to right, #1e3a8a, #3174e0) !important;
+  font-size: 22px;
+  color: white !important;
+}
+
+/* Responsive for smaller screens - Offcanvas sidebar------------------------------ */
+@media (max-width: 992px) {
+  .sidenav-container {
+    display: none;
+  }
+}
+
+/* Customize Offcanvas styles--------------------------------------------------- */
+.offcanvas-body {
+  background-color: white;
+  background: linear-gradient(to right, #1e3a8a, #3174e0);
+}
+
+.offcanvas-body .nav-link {
+  color: #1e3a8a ;
+  font-size: 18px;
+}
+
+.offcanvas-body .nav-link:hover {
+  background-color: white;
+  color: #1e3a8a;
+}
+
+/* Dash Boards ------------------------------------------------------------- */
+.dash {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.dash-container {
+  display: flex;
+  justify-content: center;
+}
+
+ .dash-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dash-card-container {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dash-card {
+  width: 24%;
+}
+@media (max-width: 770px) {
+  
+  .dash-card {
+    width: 45% !important;
+    margin-left: 200px;
+    margin-bottom: 50px;
+  } 
+
+}
+@media (max-width: 500px) {
+  .dash-card {
+    width: 100% !important;
+  }
+
+  .table {
+    overflow-x: scroll;
+    width: 100%;
+  } 
+ }
+.modal-header {
+  background: linear-gradient(to right, #1e3a8a, #3174e0);
+  color: white;
+}
+
+.modal-body {
+  background-color: #e9f0fc;
+  color: #1e3a8a;
+  font-size: 20px; 
+}
+.modal-body form {
+  padding: 20px;
+}
+
+.modal .modal-footer {
+  background: linear-gradient(to right, #1e3a8a, #3174e0);
+  color: white;
+} 
+
+td .btn {
+  width: 100px;
+}
+
+td .btn:hover {
+  font-size: 18px;
+  transition: font-size 0.3s;
+} 
+
+ .addbtn :hover {
+  font-size: 22px;
+  transition: font-size 0.3s;
+}
+
+.btnn .bttn {
+  color: white;
+  background: linear-gradient(to right, #1e3a8a, #3174e0);
+}
+
+.btnn .bttn:hover {
+  font-size: 20px;
+  color: #1e3a8a;
+  background: transparent;
+  background-color: #e9f0fc;
+  transition: background-color 0.4s ease, color 0.4s ease, font-size 0.4s;
+}
+
+/* Tables ======================================================================================================= */
+.table {
+  overflow-x: scroll !important;
+  width: 100%;
+  height: auto;
+  box-shadow: 2px 2px 12px 2px rgb(57, 57, 57);
+ }  
+
+ .table thead th {
+  background-color: #1e3a8a;
+  color: white;
+}
+
+.table tbody td {
+  font-size: 16px;
+} 
+
+.chat {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.btn a{
+  text-decoration: none;
+  color: white;
+}
