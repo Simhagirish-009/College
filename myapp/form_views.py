@@ -18,11 +18,11 @@ def LoginView(request):
 
     user = serializer.validated_data['user']
     email = user.email
-
+    
     # Generate OTP and delete recent OTP entries
     otp_value = str(random.randint(100000, 999999))
-    Otp.objects.all().delete()  # Remove all previous OTPs (adjust as needed)
-    
+    Otp.objects.filter(user=user).delete()
+
     otp_instance = Otp.objects.create(user=user, otp=otp_value)
     otp_instance.save()
 
