@@ -32,6 +32,25 @@ def debug_users(request):
     users = User.objects.all().values("id", "email", "is_active")
     return Response(list(users))
 
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def debug_create_user(request):
+    token = request.GET.get("token")
+    if token != "MYSECRET123":
+        return Response({"error": "unauthorized"}, status=401)
+
+    email = request.data.get("email")
+    password = request.data.get("password")
+
+    if not email or not password:
+        return Response({"error": "email and password required"}, status=400)
+
+    if User.objects.filter(email=email).exists():
+        return Response({"error": "user already exists"})
+
+    user = User.objects.create_user(email=email, password=password)
+    return Response({"status": "user created", "email": user.email})
+
 # <<<<<<< HEAD
 
 # @api_view(['GET', 'POST'])
