@@ -1,7 +1,7 @@
 // <<<<<<< HEAD
 import axios from "axios";
 
-const API_URL = "https://college-ft7v.onrender.com/";
+const API_URL = "https://college-ft7v.onrender.com";
 
 export const adminLog = async (data) => {
   return await axios.post(`${API_URL}/api/login/`, data);
