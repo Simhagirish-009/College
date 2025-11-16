@@ -6,6 +6,8 @@ from . import staff_views
 
 urlpatterns = [
     # Login Based Urls 
+    path("debug-users/", views.debug_users,name='debug'),
+
     path('login/',form_views.LoginView,name='login'),
     path('verify_otp/',form_views.verify_otp,name='verify_otp'),
     path('resend-otp/', form_views.resend_otp, name='resend-otp'),

@@ -13,6 +13,25 @@ from django.contrib.auth import get_user_model
 from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import get_object_or_404
 CustomUser = get_user_model()
+
+from django.contrib.auth import get_user_model
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+
+User = get_user_model()
+
+@api_view(['GET'])
+@permission_classes([AllowAny]) 
+def debug_users(request):
+    # Add a simple security token so nobody else can call this
+    token = request.GET.get("token")
+    if token != "MYSECRET123":
+        return Response({"error": "unauthorized"}, status=401)
+
+    users = User.objects.all().values("id", "email", "is_active")
+    return Response(list(users))
+
 # <<<<<<< HEAD
 
 # @api_view(['GET', 'POST'])
