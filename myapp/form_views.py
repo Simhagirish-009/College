@@ -27,17 +27,17 @@ def LoginView(request):
     otp_instance.save()
 
     # Attempt to send email with OTP
-    # try:
-    #     send_mail(
-    #         'Your OTP is Received',
-    #         f'Your One Time Password is {otp_value}',
-    #         'cbi.gov@gmail.com',
-    #         [email],
-    #         fail_silently=False
-    #     )
-    # except Exception as e:
-    #     return Response({'message': "An error occurred while sending the email: " + str(e)}, 
-    #                     status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    try:
+        send_mail(
+            'Your OTP is Received',
+            f'Your One Time Password is {otp_value}',
+            'cbi.gov@gmail.com',
+            [email],
+            fail_silently=False
+        )
+    except Exception as e:
+        return Response({'message': "An error occurred while sending the email: " + str(e)}, 
+                        status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     # Return success message and email
     return Response({"message": "OTP has been sent to your email.", "email": email}, status=status.HTTP_200_OK)
