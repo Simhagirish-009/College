@@ -160,7 +160,7 @@ const AttReport = () => {
                       <option value="">-- Select Session Year --</option>
                       {sessions.map((session) => (
                         <option key={session.id} value={session.id}>
-                          {session.start_year} - {session.end_year}
+                          {session.year}
                         </option>
                       ))}
                     </Form.Select>

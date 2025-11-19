@@ -133,58 +133,70 @@ const AddStu = () => {
     fetchCourses();
   }, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-// <<<<<<< HEAD
-    if (confirmPassword != password) {
-      alert("Passwords do not match!");
-      setLoading(false);
-      return;
-    }
-    try {
-      setLoading(true);
-      const formDataToSend = new FormData();
-      const studentName = first_name + " " + last_name;
-      formDataToSend.append("student_name", studentName);
-      formDataToSend.append("email", email);
-      formDataToSend.append("gender", gender);
-      formDataToSend.append("password", password);
-      formDataToSend.append("contact",contact);
-      formDataToSend.append("address", address);
-      formDataToSend.append("course", course);
-      formDataToSend.append("session", session); // Add this line
+ const handleSubmit = async (e) => {
+   e.preventDefault();
 
-      const response = await axios.post(
-        "http://localhost:8000/api/addstudent/",
-        formDataToSend,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+   setLoading(true);
 
-      alert("Student registered successfully!");
-      setFormData({
-        first_name: "",
-        last_name: "",
-        email: "",
-        gender: "",
-        password: "",
-        contact: "",
-        address: "",
-        course: "",
-        session: "", // Reset session
-      });
-      setError(null);
-    } catch (error) {
-      console.error("Registration error:", error.response.data);
-      setError("There was an error registering the student!");
-      alert("Registration failed");
-    } finally {
-      setLoading(false);
-    }
-  };
+   // Password validation: minimum 8 chars + at least one letter + one digit
+   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+   if (!passwordRegex.test(password)) {
+     alert(
+       "Password must be at least 8 characters long and contain both letters and numbers"
+     );
+     setLoading(false);
+     return;
+   }
+
+   if (confirmPassword !== password) {
+     alert("Passwords do not match!");
+     setLoading(false);
+     return;
+   }
+
+   try {
+     const formDataToSend = new FormData();
+     const studentName = first_name + " " + last_name;
+
+     formDataToSend.append("student_name", studentName);
+     formDataToSend.append("email", email);
+     formDataToSend.append("gender", gender);
+     formDataToSend.append("password", password);
+     formDataToSend.append("contact", contact);
+     formDataToSend.append("address", address);
+     formDataToSend.append("course", course);
+     formDataToSend.append("session", session);
+
+     await axios.post("http://localhost:8000/api/addstudent/", formDataToSend, {
+       headers: { "Content-Type": "multipart/form-data" },
+     });
+
+     alert("Student registered successfully!");
+
+     setFormData({
+       first_name: "",
+       last_name: "",
+       email: "",
+       gender: "",
+       password: "",
+       confirmPassword: "",
+       contact: "",
+       address: "",
+       course: "",
+       session: "",
+     });
+
+     setError(null);
+   } catch (error) {
+     console.error("Registration error:", error.response.data);
+     setError("There was an error registering the student!");
+     alert("Registration failed");
+   } finally {
+     setLoading(false);
+   }
+ };
+
 
   return (
     <div className="root">

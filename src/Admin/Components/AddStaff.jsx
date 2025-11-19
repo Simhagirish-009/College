@@ -67,8 +67,19 @@ const AddStaff = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // <<<<<<< HEAD
-    if (confirmPassword != password) {
+
+    // Password validation: minimum 8 characters + at least one letter + one digit
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    if (!passwordRegex.test(password)) {
+      toast.error(
+        "Password must be at least 8 characters long and contain letters and numbers"
+      );
+      setLoading(false);
+      return;
+    }
+
+    if (confirmPassword !== password) {
       toast.error("Passwords do not match!");
       setLoading(false);
       return;
@@ -99,6 +110,7 @@ const AddStaff = () => {
         gender: "",
         contact: "",
         password: "",
+        confirmPassword: "",
         address: "",
         course: "",
       });
@@ -111,6 +123,7 @@ const AddStaff = () => {
       setLoading(false);
     }
   };
+
 
   return (
     <div className="root">

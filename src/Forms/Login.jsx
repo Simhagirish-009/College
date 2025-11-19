@@ -7,6 +7,7 @@ import { HiMail } from "react-icons/hi";
 import { FaLock } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify"; // Import Toastify
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import "../App.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
