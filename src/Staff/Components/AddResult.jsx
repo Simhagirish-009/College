@@ -255,7 +255,7 @@ const AddResult = () => {
                       onChange={(e) => setUnit(e.target.value)}
                       required
                     >
-                      <option value="">-- Select Unit Format --</option>
+                      <option value="">-- Select Unit --</option>
                       {units.map((u) => (
                         <option key={u.id} value={u.id}>
                           {u.unit_field}

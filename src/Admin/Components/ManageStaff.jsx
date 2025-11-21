@@ -360,7 +360,7 @@ const ManageStaff = () => {
               {details.course_name || "Course not assigned"}
             </p>
           </div>
-          <Card className="shadow-sm p-3 mb-3 container">
+          <Card className="shadow-sm p-3 mb-3" style={{ width: "100%" }}>
             <div className="mb-1">
               <h6 className="mb-1">Email:</h6>
               <p className="text-secondary mb-0">{details.email}</p>
