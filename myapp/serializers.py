@@ -1,45 +1,11 @@
 from rest_framework import serializers
 from django.contrib.auth import authenticate
 from .models import *
-from django.contrib.auth import get_user_model
 from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.db import IntegrityError
-
-# Serializer for login Admin , Staff and student
-class LoginSerializer(serializers.Serializer):
-    email = serializers.EmailField()
-    password = serializers.CharField(write_only=True)
-
-    def validate(self, attrs):
-        UserModel = get_user_model()
-        email = attrs.get('email')
-        password = attrs.get('password')
-
-        # Check if the email exists in the database
-        if not UserModel.objects.filter(email=email).exists():
-            raise serializers.ValidationError({"email": "Invalid email."})
-
-        # Check if the password is incorrect
-        user = authenticate(username=email, password=password)
-        if user is None:
-            raise serializers.ValidationError({"password": "Invalid password."})
-
-        # Check if the user is active
-        if not user.is_active:
-            raise serializers.ValidationError("User account is disabled.")
-        
-        return {
-            'user': user,
-            'email': user.email
-        }
-# OTP serializer for verification
-class OtpSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Otp
-        fields = ['otp']
 
 # Admin Create Serializer class
 class AdminSerializer(serializers.ModelSerializer):
@@ -133,30 +99,21 @@ class LoginSerializer(serializers.Serializer):
     password = serializers.CharField(write_only=True)
 
     def validate(self, attrs):
-        UserModel = get_user_model()
         email = attrs.get('email')
         password = attrs.get('password')
 
-        # Check if the email exists in the database
-        try:
-            user_instance = UserModel.objects.get(email=email)
-        except UserModel.DoesNotExist:
-            raise serializers.ValidationError({"email": "Email is invalid."})
-
-        # Authenticate the user
+        # Authentication performs the user lookup and password check together.
         user = authenticate(username=email, password=password)
 
-        # If authentication fails, it means password is invalid
         if user is None:
-            raise serializers.ValidationError({"password": "Password is invalid."})
+            raise serializers.ValidationError({"non_field_errors": ["Invalid email or password."]})
 
-        # Check if the user is active
         if not user.is_active:
             raise serializers.ValidationError({"user": "User account is disabled."})
 
         return {
             'user': user,
-            'email': user.email  # Return user email for OTP or other use
+            'email': user.email
         }
 
 class OtpSerializer(serializers.ModelSerializer):
