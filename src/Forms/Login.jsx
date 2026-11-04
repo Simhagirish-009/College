@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 import React, { useState } from "react";
 import { Button, Card, Form, Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";

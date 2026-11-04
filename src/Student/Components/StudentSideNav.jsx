@@ -138,11 +138,7 @@ const StudentSideNav = () => {
             onClick={handleShow}
           />
         </div>
-{/* ======= */}
-      {/* <Navbar variant='dark' style={{ backgroundColor: '#1e3a8a', paddingLeft: '13px' }} expand="lg" className="d-lg-none mt-2">
-        <h3 style={{ color: 'white' }}>Student Dash Board</h3>
-        <Navbar.Toggle style={{ borderColor: 'white', fontSize: '15px', margin: '0px' }} aria-controls="offcanvasNavbar" onClick={handleShow} /> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
+
       </Navbar>
 
       {/* Offcanvas for mobile view */}
@@ -214,29 +210,7 @@ const StudentSideNav = () => {
               <HiSpeakerphone /> FeedBack
             </Nav.Link>
             <Nav.Link onClick={logOut}>
-{/* ======= */}
-        {/* <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Student Panel</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          <Nav className="side-nav flex-column">
-            <Nav.Link as={Link} to="/studash/" style={getLinkStyle('/studash/')}>
-              <FaHome /> Home
-            </Nav.Link>
-            <Nav.Link as={Link} to="/stuupdate/" style={getLinkStyle('/stuupdate/')}>
-              <ImProfile /> Update Profile
-            </Nav.Link>
-            <Nav.Link as={Link} to="/viewAtt/" style={getLinkStyle('/viewAtt/')}>
-              <FaCalendarAlt /> View Attendance
-            </Nav.Link>
-            <Nav.Link as={Link} to="/stunotify/" style={getLinkStyle('/stunotify/')}>
-              <FaBell /> View Notifications
-            </Nav.Link>
-            <Nav.Link as={Link} to="/stuleave/" style={getLinkStyle('/stuleave/')}>
-              <FaCheck /> Apply For Leave
-            </Nav.Link>
-            <Nav.Link onClick={logOut} style={{ fontWeight: 'normal', color: 'white' }}> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
+
               <FaPowerOff /> Logout
             </Nav.Link>
           </Nav>
@@ -244,7 +218,7 @@ const StudentSideNav = () => {
       </Offcanvas>
 
       {/* Desktop Sidebar */}
-{/* <<<<<<< HEAD */}
+
       <div
         className="sidenav-container d-none d-lg-flex animate__animated animate__slideInLeft"
         style={{ overflowY: "scroll" }}
