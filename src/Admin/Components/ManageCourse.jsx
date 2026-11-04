@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import {
   Button,
@@ -9,7 +8,6 @@ import {
   Spinner,
   Alert,
 } from "react-bootstrap";
-import AdminSideNav from "./AdminSideNav";
 import Titile from "../../Home/Components/Titile";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -129,7 +127,7 @@ const ManageCourse = () => {
       <Titile />
       <ToastContainer />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <AdminSideNav />
+
         <div className="flex-grow-1 p-3">
           <h2>Manage Courses</h2> <br />
           <div className="btnn">

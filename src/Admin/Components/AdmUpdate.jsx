@@ -1,7 +1,5 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AdminSideNav from "./AdminSideNav";
 import Titile from "../../Home/Components/Titile";
 import { Button, Card, Modal, Form, ListGroup, Image } from "react-bootstrap";
 import "../../App.css";
@@ -25,31 +23,10 @@ const AdmUpdate = () => {
     address: "",
     profilePic: "",
   });
-// =======
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import AdminSideNav from './AdminSideNav';
-// import Titile from '../../Home/Components/Titile';
-// import { Button, Card, Modal, Form, ListGroup, Image } from 'react-bootstrap';
-// import '../../App.css';
-
-// const AdmUpdate = () => {
-//   const [adminDetails, setAdminDetails] = useState({
-//     id: '',
-//     username: '',
-//     email: '',
-//     password: '',
-//     gender: '',
-//     address: '',
-//     profilePic: ''
-//   });
-
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
   const [showModal, setShowModal] = useState(false);
   const [formValues, setFormValues] = useState(adminDetails);
   const [profilePicFile, setProfilePicFile] = useState(null);
   const [loading, setLoading] = useState(false);
-// <<<<<<< HEAD
   const [adminModal, setAdminModal] = useState(false);
   const [adminFormValues, setAdminFormValues] = useState({
     username: "",
@@ -62,32 +39,13 @@ const AdmUpdate = () => {
   });
 
   const email = JSON.parse(localStorage.getItem("email"));
-// =======
-  // const [successMessage, setSuccessMessage] = useState('');
-  // const [errorMessage, setErrorMessage] = useState('');
-  // const [adminModal, setAdminModal] = useState(false);
-  // const [adminFormValues, setAdminFormValues] = useState({
-  //   username: '',
-  //   email: '',
-  //   password: '',
-  //   gender: '',
-  //   address: '',
-  //   profilePic: ''
-  // });
-
-  // const email = JSON.parse(localStorage.getItem('email'));
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
   useEffect(() => {
     const fetchAdminDetails = async () => {
       try {
-// <<<<<<< HEAD
         const response = await axios.get(
           `http://localhost:8000/api/admin/?email=${email}`
         );
-// =======
-        // const response = await axios.get(`http://localhost:8000/api/admin/?email=${email}`);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
         const data = response.data;
         setAdminDetails({
           id: data.details.id,
@@ -95,12 +53,8 @@ const AdmUpdate = () => {
           email: data.details.email,
           gender: data.details.gender,
           address: data.details.address,
-// <<<<<<< HEAD
           profilePic: data.details.profile_pic,
           contact: data.details.contact,
-// =======
-          profilePic: data.details.profile_pic
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
         });
         setFormValues({
           id: data.details.id,
@@ -108,28 +62,17 @@ const AdmUpdate = () => {
           email: data.details.email,
           gender: data.details.gender,
           address: data.details.address,
-// <<<<<<< HEAD
           profilePic: data.details.profile_pic,
           contact: data.details.contact,
         });
       } catch (error) {
         console.error("Error fetching admin details:", error);
-// =======
-      //     profilePic: data.details.profile_pic
-      //   });
-      // } catch (error) {
-      //   console.error('Error fetching admin details:', error);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
       }
     };
 
     if (email) {
       fetchAdminDetails();
     }
-// <<<<<<< HEAD
-// =======
-    
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
   }, [email]);
 
   const handleInputChange = (e) => {
@@ -146,7 +89,6 @@ const AdmUpdate = () => {
     setProfilePicFile(e.target.files[0]);
   };
 
-// <<<<<<< HEAD
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -161,27 +103,6 @@ const AdmUpdate = () => {
       // Append profile picture if a new one is selected
       if (profilePicFile) {
         formData.append("profile_pic", profilePicFile);
-// =======
-  // const handleAdminProfilePicChange = (e) => {
-  //   setAdminFormValues({ ...adminFormValues, profilePic: e.target.files[0] });
-  // };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   setSuccessMessage('');
-  //   setErrorMessage('');
-
-  //   try {
-  //     const formData = new FormData();
-  //     formData.append('username', formValues.username);
-  //     formData.append('email', formValues.email);
-  //     formData.append('gender', formValues.gender);
-  //     formData.append('address', formValues.address);
-
-  //     if (profilePicFile) {
-  //       formData.append('profile_pic', profilePicFile);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
       }
 
       const response = await axios.put(
@@ -189,28 +110,16 @@ const AdmUpdate = () => {
         formData,
         {
           headers: {
-// <<<<<<< HEAD
             "Content-Type": "multipart/form-data",
-// =======
-            // 'Content-Type': 'multipart/form-data',
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
           },
         }
       );
 
       setAdminDetails({ ...formValues, profilePic: response.data.profile_pic });
-// <<<<<<< HEAD
       alert("Admin Edited Successfully")
       setShowModal(false);
     } catch (error) {
       console.error("Error updating profile:", error);
-// =======
-    //   setSuccessMessage('Profile updated successfully!');
-    //   setShowModal(false);
-    // } catch (error) {
-    //   console.error('Error updating profile:', error);
-    //   setErrorMessage('Error updating profile. Please try again.');
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
     } finally {
       setLoading(false);
     }
@@ -222,7 +131,6 @@ const AdmUpdate = () => {
 
     try {
       const formData = new FormData();
-// <<<<<<< HEAD
       formData.append("username", adminFormValues.username);
       formData.append("email", adminFormValues.email);
       formData.append("password", adminFormValues.password);
@@ -248,48 +156,15 @@ const AdmUpdate = () => {
       alert("Admin Added Successfully")
     } catch (error) {
       console.error("Error adding admin:", error);
-// =======
-    //   formData.append('username', adminFormValues.username);
-    //   formData.append('email', adminFormValues.email);
-    //   formData.append('password', adminFormValues.password);
-    //   formData.append('gender', adminFormValues.gender);
-    //   formData.append('address', adminFormValues.address);
-
-    //   if (adminFormValues.profilePic) {
-    //     formData.append('profile_pic', adminFormValues.profilePic);
-    //   }
-
-    //   await axios.post(`http://localhost:8000/api/addadmin/`, formData, {
-    //     headers: {
-    //       'Content-Type': 'multipart/form-data',
-    //     },
-    //   });
-
-    //   setSuccessMessage('Admin added successfully!');
-    //   setAdminModal(false);
-    //   setAdminFormValues({
-    //     username: '',
-    //     email: '',
-    //     password: '',
-    //     gender: '',
-    //     address: '',
-    //     profilePic: ''
-    //   });
-    // } catch (error) {
-    //   console.error('Error adding admin:', error);
-    //   setErrorMessage('Error adding admin. Please try again.');
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
     } finally {
       setLoading(false);
     }
   };
 
   return (
-// <<<<<<< HEAD
     <div className="root">
       <Titile />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <AdminSideNav />
 
         <div className="dash flex-grow-1 p-3">
           <div className="btnn px-2 d-flex flex-reverse">
@@ -462,7 +337,6 @@ const AdmUpdate = () => {
               <Modal.Body>
                 <Form onSubmit={handleAdminSubmit}>
                   <Form.Group>
-{/* <<<<<<< HEAD */}
                     <Form.Label>
                       <FaUser /> Username :{" "}
                     </Form.Label>
@@ -476,7 +350,6 @@ const AdmUpdate = () => {
                   </Form.Group>
 
                   <Form.Group>
-{/* <<<<<<< HEAD */}
                     <Form.Label>
                       <HiMail /> Email :{" "}
                     </Form.Label>
@@ -488,7 +361,6 @@ const AdmUpdate = () => {
                       onChange={handleAdminInputChange}
                     />
                   </Form.Group>
-{/* <<<<<<< HEAD */}
                   <Form.Group>
                     <Form.Label>
                       <FaLock /> Password
@@ -501,7 +373,6 @@ const AdmUpdate = () => {
                       onChange={handleAdminInputChange}
                     />
                   </Form.Group>
-{/* <<<<<<< HEAD */}
                   <Form.Group>
                     <Form.Label>
                       <HiMail /> Contact :
@@ -533,7 +404,6 @@ const AdmUpdate = () => {
                   </Form.Group>
 
                   <Form.Group>
-{/* <<<<<<< HEAD */}
                     <Form.Label>
                       <FaMapMarkerAlt /> Address :{" "}
                     </Form.Label>

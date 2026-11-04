@@ -1,7 +1,5 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import Titile from "../../Home/Components/Titile";
-import StaffSideNav from "./StaffSideBar";
 import { Form, Card, Button, Spinner } from "react-bootstrap";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -104,7 +102,7 @@ const StaffLeave = () => {
       <Titile />
       <ToastContainer />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <StaffSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="dash-container d-flex flex-column align-items-center">
             <Card

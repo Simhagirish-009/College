@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import {
   Button,
@@ -8,7 +7,6 @@ import {
   Spinner,
   ToastContainer,
 } from "react-bootstrap";
-import AdminSideNav from "./AdminSideNav";
 import Titile from "../../Home/Components/Titile";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -127,7 +125,7 @@ const ViewAllResults = () => {
       <Titile />
       <ToastContainer />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <AdminSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="dash-container d-flex justify-content-center">
             <Card

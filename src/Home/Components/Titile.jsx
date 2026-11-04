@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { Navbar, Container, Image, Dropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -127,19 +126,3 @@ const Titile = () => {
 };
 
 export default Titile;
-// =======
-// import React from 'react'
-// import { Navbar , Container } from 'react-bootstrap'
-
-// const Titile = () => {
-//   return (
-//     <Navbar variant='dark' sticky='top' expand="lg" className='dash-title'>
-//       <Container fluid>
-//         <h3 style={{color : 'white'}}>College Management System</h3>
-//       </Container>
-//     </Navbar>
-//   )
-// }
-
-// export default Titile
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b

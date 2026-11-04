@@ -1,6 +1,4 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
-import StaffSideNav from "./StaffSideBar";
 import Titile from "../../Home/Components/Titile";
 import { Table, Spinner, Card, Button, Modal, Form } from "react-bootstrap";
 import axios from "axios";
@@ -142,7 +140,7 @@ const AllResult = () => {
       <Titile />
       <ToastContainer />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <StaffSideNav />
+
         <div className="dash flex-grow-1 p-3 d-flex justify-content-center">
           <Card
             className="animate__animated animate__fadeIn mt-2"

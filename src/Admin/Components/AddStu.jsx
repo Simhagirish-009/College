@@ -1,6 +1,4 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
-import AdminSideNav from "./AdminSideNav";
 import Titile from "../../Home/Components/Titile";
 import { Button, Card, Form } from "react-bootstrap";
 import axios from "axios";
@@ -42,42 +40,15 @@ const AddStu = () => {
     course,
     session,
   } = formData;
-// =======
-// import React, { useState, useEffect } from 'react';
-// import AdminSideNav from './AdminSideNav';
-// import Titile from '../../Home/Components/Titile';
-// import { Button, Card, Form } from 'react-bootstrap';
-// import axios from 'axios';
-// import '../../App.css';
-
-// const AddStu = () => {
-//   const [formData, setFormData] = useState({
-//     studentName: '',
-//     email: '',
-//     gender: '',
-//     password: '',
-//     address: '',
-//     course: '',
-//     profilePic: null,
-//     session : ''
-//   });
-
-//   const { studentName, email, gender, password, address, profilePic, course,session } = formData;
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
   const [courses, setCourses] = useState([]);
   const [sessions, setSessions] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-// <<<<<<< HEAD
-// =======
-  // const [message, setMessage] = useState('');
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-// <<<<<<< HEAD
   useEffect(() => {
     const fetchSessions = async () => {
       try {
@@ -88,24 +59,6 @@ const AddStu = () => {
       } catch (error) {
         console.error("Error fetching sessions:", error);
       }
-// =======
-  // const handleFileChange = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     setFormData({ ...formData, profilePic: file });
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const fetchSessions = async () => {
-  //       try {
-  //           const response = await axios.get('http://localhost:8000/api/addsession/');
-  //           setSessions(response.data); 
-  //       } catch (error) {
-  //           console.error("Error fetching sessions:", error);
-  //           setMessage('Error fetching sessions');
-  //       }
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
     };
 
     fetchSessions();
@@ -114,20 +67,12 @@ const AddStu = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-// <<<<<<< HEAD
         const response = await axios.get(
           "http://localhost:8000/api/addcourse/"
         );
         setCourses(response.data);
       } catch (error) {
         console.error("Error fetching courses:", error);
-// =======
-      //   const response = await axios.get('http://localhost:8000/api/addcourse/')
-      //   setCourses(response.data);
-      // } catch (error) {
-      //   console.error("Error fetching courses:", error);
-      //   setMessage('Error fetching courses');
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
       }
     };
     fetchCourses();
@@ -202,7 +147,7 @@ const AddStu = () => {
     <div className="root">
       <Titile />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <AdminSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="dash-container">
             <Card
@@ -258,7 +203,6 @@ const AddStu = () => {
   //       <div className="dash flex-grow-1 p-3">
   //         <div className='dash-container'>
   //           <Card className='animate__animated animate__fadeIn mt-2' style={{ width: '85%' }}> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
               <Card.Header>
                 <Card.Title>Add Student</Card.Title>
               </Card.Header>
@@ -266,7 +210,6 @@ const AddStu = () => {
                 {error && <div className="alert alert-danger">{error}</div>}
                 <Form onSubmit={handleSubmit}>
                   <Form.Group>
-{/* <<<<<<< HEAD */}
                     <Form.Label>
                       <FaUser /> First Name :
                     </Form.Label>
@@ -318,7 +261,6 @@ const AddStu = () => {
                       required
                     >
                       <option value="">-- Select Gender --</option>
-{/* ======= */}
                     {/* <Form.Label>Full Name :</Form.Label>
                     <Form.Control type='text' name="studentName" value={studentName} onChange={handleChange} required />
                   </Form.Group>
@@ -330,12 +272,10 @@ const AddStu = () => {
                     <Form.Label>Gender :</Form.Label>
                     <Form.Select name="gender" value={gender} onChange={handleChange} required>
                       <option value="">-- Select your Gender --</option> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                       <option value="M">Male</option>
                       <option value="F">Female</option>
                     </Form.Select>
                   </Form.Group>
-{/* <<<<<<< HEAD */}
                   <br />
                   <Form.Group>
                     <Form.Label>
@@ -413,40 +353,10 @@ const AddStu = () => {
                         <option key={dates.id} value={dates.id}>
                           {dates.year}
                         </option>
-// =======
-                  // <Form.Group>
-                  //   <Form.Label>Password :</Form.Label>
-                  //   <Form.Control type='password' name="password" value={password} onChange={handleChange} required />
-                  // </Form.Group>
-                  // <Form.Group>
-                  //   <Form.Label>Profile Pic :</Form.Label>
-                  //   <Form.Control type='file' name="profilePic" onChange={handleFileChange} />
-                  // </Form.Group>
-                  // <Form.Group>
-                  //   <Form.Label>Address :</Form.Label>
-                  //   <Form.Control as="textarea" rows={5} name="address" value={address} onChange={handleChange} />
-                  // </Form.Group>
-                  // <Form.Group>
-                  //   <Form.Label>Course :</Form.Label>
-                  //   <Form.Select name="course" value={course} onChange={handleChange} required>
-                  //     <option value="">-- Select Course --</option>
-                  //     {courses.map((course) => (
-                  //       <option key={course.id} value={course.id}>{course.name}</option>
-                  //     ))}
-                  //   </Form.Select>
-                  // </Form.Group>
-                  // <Form.Group>
-                  //   <Form.Label>Session :</Form.Label>
-                  //   <Form.Select name="session" value={session} onChange={handleChange} required>
-                  //     <option value="">-- Select Session --</option>
-                  //     {sessions.map((dates) => (
-                  //       <option key={dates.id} value={dates.id}>{dates.start_year}-----{dates.end_year}</option>
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
                       ))}
                     </Form.Select>
                   </Form.Group>
                   <br />
-{/* <<<<<<< HEAD */}
 
                   <Form.Group>
                     <Form.Label>
@@ -471,13 +381,11 @@ const AddStu = () => {
                     </Button>
                   </Form.Group>
                   <br />
-{/* ======= */}
                   {/* <Form.Group className='form-group justify-content-center d-flex'>
                     <Button className='px-5 py-2' type='submit' disabled={loading}>
                       {loading ? 'Registering...' : 'Join The Student'}
                     </Button>
                   </Form.Group> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                 </Form>
               </Card.Body>
             </Card>
@@ -488,8 +396,4 @@ const AddStu = () => {
   );
 };
 
-// <<<<<<< HEAD
 // export default AddStu;
-// =======
-export default AddStu;
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b

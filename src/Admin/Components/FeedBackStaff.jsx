@@ -1,7 +1,5 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AdminSideNav from "./AdminSideNav";
 import Titile from "../../Home/Components/Titile";
 import { Button, Card, Modal, Form, Spinner, Alert } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify"; // Import Toastify
@@ -99,7 +97,7 @@ const FeedBackStaff = () => {
       <Titile />
       <ToastContainer /> {/* Render ToastContainer */}
       <div className="d-lg-flex d-md-block d-sm-block">
-        <AdminSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <h2>FeedBack Reports (Staff)</h2>
           <br />

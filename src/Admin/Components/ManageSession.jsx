@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import {
   Button,
@@ -9,7 +8,6 @@ import {
   Spinner,
   Alert,
 } from "react-bootstrap";
-import AdminSideNav from "./AdminSideNav";
 import Titile from "../../Home/Components/Titile";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -158,7 +156,7 @@ const ManageSession = () => {
       <Titile />
       <ToastContainer />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <AdminSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <h2>Manage Sessions</h2>
           <br />

@@ -1,7 +1,5 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AdminSideNav from "./AdminSideNav";
 import Titile from "../../Home/Components/Titile";
 import { Button, Card, Spinner } from "react-bootstrap";
 import StaffIcon from "../../assets/images/teacher.png";
@@ -66,7 +64,7 @@ const AdminDash = () => {
     <div className="root">
       <Titile />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <AdminSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="d-flex justify-content-between align-items-center">
             <h1>Welcome {details.username}</h1>
@@ -143,7 +141,6 @@ const AdminDash = () => {
 {/* // ======= */}
 {/* import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import AdminSideNav from './AdminSideNav';
 import Titile from '../../Home/Components/Titile';
 import { Button, Card , ListGroup, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -256,7 +253,7 @@ const AdminDash = () => {
     <div>
       <Titile />
       <div className="d-lg-flex">
-        <AdminSideNav />
+
         <div className="dash flex-grow-1">
           <div className="d-lg-flex d-md-flex d-sm-block justify-content-between align-items-center">
             <h1>Welcome {details.username}</h1>
@@ -361,7 +358,6 @@ const AdminDash = () => {
             </Card>
             </div>
           </div> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
         </div>
       </div>
     </div>

@@ -1,7 +1,5 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { Table, Alert, Card, Spinner, Form } from "react-bootstrap";
-import StudentSideNav from "./StudentSideNav";
 import Titile from "../../Home/Components/Titile";
 import axios from "axios";
 
@@ -45,7 +43,7 @@ const ViewAtt = () => {
     <div>
       <Titile />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <StudentSideNav />
+
         <div className="flex-grow-1 p-3">
           {error && <Alert variant="danger">{error}</Alert>}
           <Card

@@ -8,7 +8,6 @@ import {
   Spinner,
   Alert,
 } from "react-bootstrap";
-import StaffSideNav from "./StaffSideBar";
 import Titile from "../../Home/Components/Titile";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -238,7 +237,7 @@ const ManageUnit = () => {
       <Titile />
       <ToastContainer />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <StaffSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <h2>Manage Units</h2> <br />
           <Card style={{ width: "100%" }}>

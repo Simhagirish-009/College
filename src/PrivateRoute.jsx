@@ -1,15 +1,10 @@
-// <<<<<<< HEAD
-import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
-const PrivateRoute = ({ children, allowedUserTypes }) => {
+const PrivateRoute = ({ allowedUserTypes }) => {
   const token = localStorage.getItem("access_token");
-  const userType = localStorage.getItem("role"); // retrieve user_type
-  
-  // Check if both token and allowed user type are valid
-  const isAuthorized = token && allowedUserTypes.includes(userType);
-
-  return isAuthorized ? children : <Navigate to="/login" />;
+  const userType = localStorage.getItem("role");
+  const isAllowed = token && (!allowedUserTypes || allowedUserTypes.includes(userType));
+  return isAllowed ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
 export default PrivateRoute;

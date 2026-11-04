@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { Alert, Card } from "react-bootstrap";
 import StudentSideNav from "./StudentSideNav"; // Make sure to import your side nav
@@ -60,7 +59,7 @@ const StuNotifications = () => {
       <Titile />
       <ToastContainer />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <StudentSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <h2>Notifications</h2>
           {error && <Alert variant="danger">{error}</Alert>}

@@ -1,6 +1,4 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
-import AdminSideNav from "./AdminSideNav";
 import Titile from "../../Home/Components/Titile";
 import { Button, Card, Form, Spinner } from "react-bootstrap";
 import axios from "axios";
@@ -52,7 +50,6 @@ const AddStaff = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        // <<<<<<< HEAD
         const response = await axios.get(
           "http://localhost:8000/api/addcourse/"
         );
@@ -130,7 +127,7 @@ const AddStaff = () => {
       <Titile />
       <ToastContainer />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <AdminSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="dash-container">
             <Card

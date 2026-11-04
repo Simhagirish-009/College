@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 import React, { useState , useEffect} from "react";
 import { Navbar, Nav, Offcanvas , Image} from "react-bootstrap";
 import {
@@ -15,41 +14,20 @@ import { CgMenuGridR, CgNotifications } from "react-icons/cg";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "animate.css";
-// =======
-// import React, { useState, useEffect } from 'react';
-// import { Navbar, Nav, Offcanvas , Image } from 'react-bootstrap';
-// import { FaHome, FaPowerOff, FaBookmark, FaBook, FaCalendar, FaCheckDouble } from 'react-icons/fa';
-// import { ImProfile } from 'react-icons/im';
-// import { HiUserAdd, HiSpeakerphone } from 'react-icons/hi';
-// import { CgMenuGridR, CgNotifications } from 'react-icons/cg';
-// import { Link, useNavigate, useLocation } from 'react-router-dom';
-// import axios from 'axios';
-// import 'animate.css';
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
 const AdminSideNav = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const location = useLocation(); // Get the current location
   const [adminDetails, setAdminDetails] = useState({
-// <<<<<<< HEAD
     username: "",
     email: "",
     profilePic: "",
-// =======
-    // username: '',
-    // email: '',
-    // password: '',
-    // gender: '',
-    // address: '',
-    // profilePic: ''
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
   });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-// <<<<<<< HEAD
   const email = JSON.parse(localStorage.getItem("email"));
   useEffect(() => {
     const fetchAdminDetails = async () => {
@@ -57,31 +35,14 @@ const AdminSideNav = () => {
         const response = await axios.get(
           `http://localhost:8000/api/admin/?email=${email}`
         );
-// =======
-  // const email = JSON.parse(localStorage.getItem('email'))
-  // useEffect(() => {
-  //   const fetchAdminDetails = async () => {
-  //     try {
-  //       const response = await axios.get(`http://localhost:8000/api/admin/?email=${email}`);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
         const data = response.data;
         setAdminDetails({
           username: data.details.username,
           email: data.details.email,
-// <<<<<<< HEAD
           profilePic: data.details.profile_pic,
         });
       } catch (error) {
         console.error("Error fetching admin details:", error);
-// =======
-      //     password: data.details.password,
-      //     gender: data.details.gender,
-      //     address: data.details.address,
-      //     profilePic: data.details.profile_pic
-      //   });
-      // } catch (error) {
-      //   console.error('Error fetching admin details:', error);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
       }
     };
 
@@ -89,19 +50,12 @@ const AdminSideNav = () => {
       fetchAdminDetails();
     }
   }, [email]);
-// <<<<<<< HEAD
 
-// =======
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
   const logOut = () => {
     const confirmed = window.confirm("Are you sure you want to log out?");
     if (confirmed) {
       localStorage.clear();
-// <<<<<<< HEAD
 //       navigate("/login/");
-// =======
-      navigate('/login/');
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
     }
   };
 
@@ -110,25 +64,15 @@ const AdminSideNav = () => {
 
   // Function to get styles for active/inactive links
   const getLinkStyle = (path) => ({
-    // <<<<<<< HEAD
     color: isActiveLink(path) ? "white" : "#1e3a8a",
     background: isActiveLink(path)
       ? "linear-gradient(to right, #1E3A8A, #3B82F6)"
       : "transparent",
   });
-// =======
-//     color: isActiveLink(path) ? 'white' : '#1E3A8A',
-//     background: isActiveLink(path) 
-//         ? 'linear-gradient(to right, #1E3A8A, #3B82F6)' 
-//         : 'transparent',
-// });
-
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
   return (
     <>
       {/* Mobile Navbar */}
-      {/* <<<<<<< HEAD */}
       <Navbar
         variant="dark"
         style={{ backgroundColor: "#1e3a8a", paddingLeft: "13px" }}
@@ -144,16 +88,13 @@ const AdminSideNav = () => {
             onClick={handleShow}
           />
         </div>
-        {/* ======= */}
         {/* <Navbar variant='dark' style={{ backgroundColor: '#1e3a8a', paddingLeft: '13px' }} expand="lg" className="d-lg-none mt-2">
         <h3 style={{ color: 'white' }}>Admin Dash Board</h3>
         <Navbar.Toggle style={{ borderColor: 'white', fontSize: '15px', margin: '0px' }} aria-controls="offcanvasNavbar" onClick={handleShow} /> */}
-        {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
       </Navbar>
 
       {/* Offcanvas for mobile view */}
       <Offcanvas show={show} onHide={handleClose} className="d-lg-none">
-        {/* <<<<<<< HEAD */}
         <Offcanvas.Header
           closeButton
           closeVariant="white"
@@ -274,7 +215,6 @@ const AdminSideNav = () => {
               onClick={logOut}
               style={{ fontWeight: "normal", color: "white" }}
             >
-              {/* =======  */}
               {/* <Offcanvas.Header closeButton>
           <Offcanvas.Title>Admin Panel</Offcanvas.Title>
         </Offcanvas.Header>
@@ -326,7 +266,6 @@ const AdminSideNav = () => {
               <FaCheckDouble /> Student Leave
             </Nav.Link>
             <Nav.Link onClick={logOut} style={{ fontWeight: 'normal', color: 'white' }}>
->>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
               <FaPowerOff /> Logout
             </Nav.Link>
           </Nav>
@@ -334,7 +273,6 @@ const AdminSideNav = () => {
       </Offcanvas>
 
       {/* Desktop Sidebar */}
-      {/* <<<<<<< HEAD */}
       <div
         className="sidenav-container d-none d-lg-flex animate__animated animate__slideInLeft"
         style={{ overflowY: "scroll" }}
@@ -519,7 +457,6 @@ const AdminSideNav = () => {
               <FaCheckDouble /> Staff Leave
             </Nav.Link>
             <Nav.Link as={Link} to="/stuapprove/" style={getLinkStyle('/stuapprove/')}> */}
-              {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
               <FaCheckDouble /> Student Leave
             </Nav.Link>
             <Nav.Link onClick={logOut}>
