@@ -125,7 +125,6 @@ const StuUpdate = () => {
   return (
     <div>
       <Titile />
-{/* <<<<<<< HEAD */}
       <div className="d-lg-flex d-md-block d-sm-block">
 
         <div className="dash flex-grow-1 p-3">
@@ -181,7 +180,6 @@ const StuUpdate = () => {
                   >
                     Update Profile
                   </Button>
-{/* ======= */}
       {/* <div className='d-lg-flex d-md-block d-sm-block'>
 
         <div className="dash flex-grow-1 p-3">
@@ -209,30 +207,23 @@ const StuUpdate = () => {
                 <br /><br />
                 <div className='btnn d-flex justify-content-center'>
                   <Button className='bttn px-5' onClick={() => setShowModal(true)}>Update Profile</Button> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                 </div>
               </Card.Body>
             </Card>
 
             {/* Modal for updating profile */}
             <Modal show={showModal} onHide={() => setShowModal(false)}>
-{/* <<<<<<< HEAD */}
               <Modal.Header closeButton closeVariant="white">
-{/* ======= */}
               {/* <Modal.Header closeButton> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                 <Modal.Title>Update Profile</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <Form onSubmit={handleSubmit}>
                   <Form.Group>
-{/* <<<<<<< HEAD */}
                     <Form.Label>
                       <FaUser /> User Name :
                     </Form.Label>
-{/* ======= */}
                     {/* <Form.Label>First Name</Form.Label> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                     <Form.Control
                       type="text"
                       name="student_name"
@@ -240,16 +231,13 @@ const StuUpdate = () => {
                       onChange={handleInputChange}
                     />
                   </Form.Group>
-{/* <<<<<<< HEAD */}
                   <br />
                   <Form.Group>
                     <Form.Label>
                       <HiMail /> Email :
                     </Form.Label>
-{/* ======= */}
                   {/* <Form.Group>
                     <Form.Label>Email</Form.Label> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                     <Form.Control
                       type="email"
                       name="email"
@@ -257,7 +245,6 @@ const StuUpdate = () => {
                       onChange={handleInputChange}
                     />
                   </Form.Group>
-{/* <<<<<<< HEAD */}
                   <br />
                   <Form.Group>
                     <Form.Label>
@@ -268,18 +255,15 @@ const StuUpdate = () => {
                       value={formValues.gender}
                       onChange={handleInputChange}
                     >
-{/* ======= */}
 
                   {/* <Form.Group>
                     <Form.Label>Gender</Form.Label>
                     <Form.Select name="gender" value={formValues.gender} onChange={handleInputChange}> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                       <option value="">-- Select Gender --</option>
                       <option value="M">Male</option>
                       <option value="F">Female</option>
                     </Form.Select>
                   </Form.Group>
-{/* <<<<<<< HEAD */}
                   <br />
                   <Form.Group>
                     <Form.Label>
@@ -296,11 +280,9 @@ const StuUpdate = () => {
                     <Form.Label>
                       <FaMapMarkerAlt /> Address :
                     </Form.Label>
-{/* ======= */}
 
                   {/* <Form.Group>
                     <Form.Label>Address</Form.Label> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                     <Form.Control
                       as="textarea"
                       rows={3}
@@ -309,7 +291,6 @@ const StuUpdate = () => {
                       onChange={handleInputChange}
                     />
                   </Form.Group>
-{/* <<<<<<< HEAD */}
                   <br />
                   <div className="btnn d-flex justify-content-center ">
                     <Button
@@ -330,7 +311,6 @@ const StuUpdate = () => {
                 </Form>
               </Modal.Body>
             </Modal>
-{/* ======= */}      
                   {/* <Form.Group>
                     <Form.Label>Profile Picture</Form.Label>
                     <Form.Control
@@ -348,7 +328,6 @@ const StuUpdate = () => {
               </Modal.Body>
             </Modal> */}
 
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
           </div>
         </div>
       </div>

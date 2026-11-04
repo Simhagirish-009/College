@@ -358,7 +358,6 @@ const AdminDash = () => {
             </Card>
             </div>
           </div> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
         </div>
       </div>
     </div>

@@ -337,7 +337,6 @@ const AdmUpdate = () => {
               <Modal.Body>
                 <Form onSubmit={handleAdminSubmit}>
                   <Form.Group>
-{/* <<<<<<< HEAD */}
                     <Form.Label>
                       <FaUser /> Username :{" "}
                     </Form.Label>
@@ -351,7 +350,6 @@ const AdmUpdate = () => {
                   </Form.Group>
 
                   <Form.Group>
-{/* <<<<<<< HEAD */}
                     <Form.Label>
                       <HiMail /> Email :{" "}
                     </Form.Label>
@@ -363,7 +361,6 @@ const AdmUpdate = () => {
                       onChange={handleAdminInputChange}
                     />
                   </Form.Group>
-{/* <<<<<<< HEAD */}
                   <Form.Group>
                     <Form.Label>
                       <FaLock /> Password
@@ -376,7 +373,6 @@ const AdmUpdate = () => {
                       onChange={handleAdminInputChange}
                     />
                   </Form.Group>
-{/* <<<<<<< HEAD */}
                   <Form.Group>
                     <Form.Label>
                       <HiMail /> Contact :
@@ -408,7 +404,6 @@ const AdmUpdate = () => {
                   </Form.Group>
 
                   <Form.Group>
-{/* <<<<<<< HEAD */}
                     <Form.Label>
                       <FaMapMarkerAlt /> Address :{" "}
                     </Form.Label>

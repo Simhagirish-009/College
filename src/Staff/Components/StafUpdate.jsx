@@ -134,7 +134,6 @@ const StaUpdate = () => {
     <div>
       <Titile />
       <ToastContainer />
-      {/* <<<<<<< HEAD */}
       <div className="d-lg-flex d-md-block d-sm-block">
 
         <div className="dash flex-grow-1 p-3">
@@ -197,23 +196,17 @@ const StaUpdate = () => {
 
             {/* Modal for updating profile */}
             <Modal show={showModal} onHide={() => setShowModal(false)}>
-              {/* <<<<<<< HEAD */}
               <Modal.Header closeButton closeVariant="white">
-                {/* ======= */}
                 {/* <Modal.Header closeButton> */}
-                {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                 <Modal.Title>Update Profile</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <Form onSubmit={handleSubmit}>
                   <Form.Group>
-                    {/* <<<<<<< HEAD */}
                     <Form.Label>
                       <FaUser /> User Name :{" "}
                     </Form.Label>
-                    {/* ======= */}
                     {/* <Form.Label>User Name</Form.Label> */}
-                    {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                     <Form.Control
                       type="text"
                       name="staff_name"
@@ -221,16 +214,13 @@ const StaUpdate = () => {
                       onChange={handleInputChange}
                     />
                   </Form.Group>
-                  {/* <<<<<<< HEAD */}
                   <br />
                   <Form.Group>
                     <Form.Label>
                       <HiMail /> Email :
                     </Form.Label>
-                    {/* ======= */}
                     {/* <Form.Group>
                     <Form.Label>Email</Form.Label> */}
-                    {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                     <Form.Control
                       type="email"
                       name="email"
@@ -238,7 +228,6 @@ const StaUpdate = () => {
                       onChange={handleInputChange}
                     />
                   </Form.Group>
-                  {/* <<<<<<< HEAD */}
                   <br />
                   <Form.Group>
                     <Form.Label>
@@ -249,26 +238,21 @@ const StaUpdate = () => {
                       value={formValues.gender}
                       onChange={handleInputChange}
                     >
-                      {/* ======= */}
                       {/* <Form.Group>
                     <Form.Label>Gender</Form.Label>
                     <Form.Select name="gender" value={formValues.gender} onChange={handleInputChange}> */}
-                      {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                       <option value="">-- Select Gender --</option>
                       <option value="M">Male</option>
                       <option value="F">Female</option>
                     </Form.Select>
                   </Form.Group>
-                  {/* <<<<<<< HEAD */}
                   <br />
                   <Form.Group>
                     <Form.Label>
                       <HiMail /> Contact :
                     </Form.Label>
-                    {/* ======= */}
                     {/* <Form.Group>
                     <Form.Label>Email</Form.Label> */}
-                    {/* >>>>>>> 959a3b8c4a74156b45156af0d3d747249948b */}
                     <Form.Control
                       type="number"
                       name="contact"
@@ -293,10 +277,8 @@ const StaUpdate = () => {
                     <Form.Label>
                       <FaMapMarkerAlt /> Address :
                     </Form.Label>
-                    {/* ======= */}
                     {/* <Form.Group>
                     <Form.Label>Address</Form.Label> */}
-                    {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                     <Form.Control
                       as="textarea"
                       rows={3}
@@ -305,7 +287,6 @@ const StaUpdate = () => {
                       onChange={handleInputChange}
                     />
                   </Form.Group>
-                  {/* <<<<<<< HEAD */}
                   <br />
                   <div className="btnn d-flex justify-content-center ">
                     <Button
@@ -323,7 +304,6 @@ const StaUpdate = () => {
                       )}
                     </Button>
                   </div>
-                  {/* ======= */}
                   {/* <Form.Group>
                     <Form.Label>Profile Picture</Form.Label>
                     <Form.Control
@@ -337,7 +317,6 @@ const StaUpdate = () => {
                   <Button variant="primary" type="submit" disabled={updating}>
                     {updating ? <Spinner as="span" animation="border" size="sm" /> : 'Save Changes'}
                   </Button> */}
-                  {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                 </Form>
               </Modal.Body>
             </Modal>

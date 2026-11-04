@@ -75,7 +75,6 @@ const StaffSideNav = () => {
   return (
     <>
       {/* Mobile Navbar */}
-      {/* <<<<<<< HEAD */}
       <Navbar
         variant="dark"
         style={{ backgroundColor: "#1e3a8a", paddingLeft: "13px" }}
@@ -194,7 +193,6 @@ const StaffSideNav = () => {
               <FaBell /> FeedBack System
             </Nav.Link>
             <Nav.Link onClick={logOut}>
-              {/* ======= */}
               {/* <Navbar variant='dark' style={{ backgroundColor: '#1e3a8a', paddingLeft: '13px' }} expand="lg" className="d-lg-none mt-2">
         <h3 style={{ color: 'white' }}>Staff Dash Board</h3>
         <Navbar.Toggle style={{ borderColor: 'white', fontSize: '15px', margin: '0px' }} aria-controls="offcanvasNavbar" onClick={handleShow} />
@@ -231,7 +229,6 @@ const StaffSideNav = () => {
               <FaBell /> View Notification
             </Nav.Link>
             <Nav.Link onClick={logOut} style={{ fontWeight: 'normal', color: 'white' }}> */}
-              {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
               <FaPowerOff /> Logout
             </Nav.Link>
           </Nav>
@@ -239,7 +236,6 @@ const StaffSideNav = () => {
       </Offcanvas>
 
       {/* Desktop Sidebar */}
-      {/* <<<<<<< HEAD */}
       <div
         className="sidenav-container d-none d-lg-flex animate__animated animate__slideInLeft"
         style={{ overflowY: "scroll" }}
@@ -331,7 +327,6 @@ const StaffSideNav = () => {
               to="/staffeedback/"
               style={getLinkStyle("/staffeedback/")}
             >
-              {/* ======= */}
               {/* <div className="sidenav-container d-none d-lg-flex animate__animated animate__slideInLeft" style={{ overflowY: 'scroll' }}>
         <div className="sidenav-content">
           <h3 className="py-3 text-center sidenav-header">Staff Panel</h3>
@@ -365,7 +360,6 @@ const StaffSideNav = () => {
               <FaBell /> View Notification
             </Nav.Link>
             <Nav.Link as={Link} to="/staffeedback/" style={getLinkStyle('/staffeedback/')}> */}
-              {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
               <FaBell /> FeedBack System
             </Nav.Link>
             <Nav.Link onClick={logOut}>
@@ -373,11 +367,9 @@ const StaffSideNav = () => {
             </Nav.Link>
           </Nav>
         </div>
-        {/* // <<<<<<< HEAD */}
         {/* //       </div> */}
         {/* // ======= */}
       </div>
-      {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
     </>
   );
 };

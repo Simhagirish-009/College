@@ -42,7 +42,6 @@ const NavBar = () => {
   //           <Nav.Link href="/about"><FaInfo/> About Us</Nav.Link>
   //           <Nav.Link href="/login"><FaUser/> Login</Nav.Link>
   //           <Nav.Link href="/contact"><FaPhone/> Contact Us</Nav.Link> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
           </Nav>
         </Navbar.Collapse>
       </Container>

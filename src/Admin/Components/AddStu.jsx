@@ -203,7 +203,6 @@ const AddStu = () => {
   //       <div className="dash flex-grow-1 p-3">
   //         <div className='dash-container'>
   //           <Card className='animate__animated animate__fadeIn mt-2' style={{ width: '85%' }}> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
               <Card.Header>
                 <Card.Title>Add Student</Card.Title>
               </Card.Header>
@@ -211,7 +210,6 @@ const AddStu = () => {
                 {error && <div className="alert alert-danger">{error}</div>}
                 <Form onSubmit={handleSubmit}>
                   <Form.Group>
-{/* <<<<<<< HEAD */}
                     <Form.Label>
                       <FaUser /> First Name :
                     </Form.Label>
@@ -263,7 +261,6 @@ const AddStu = () => {
                       required
                     >
                       <option value="">-- Select Gender --</option>
-{/* ======= */}
                     {/* <Form.Label>Full Name :</Form.Label>
                     <Form.Control type='text' name="studentName" value={studentName} onChange={handleChange} required />
                   </Form.Group>
@@ -275,12 +272,10 @@ const AddStu = () => {
                     <Form.Label>Gender :</Form.Label>
                     <Form.Select name="gender" value={gender} onChange={handleChange} required>
                       <option value="">-- Select your Gender --</option> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                       <option value="M">Male</option>
                       <option value="F">Female</option>
                     </Form.Select>
                   </Form.Group>
-{/* <<<<<<< HEAD */}
                   <br />
                   <Form.Group>
                     <Form.Label>
@@ -362,7 +357,6 @@ const AddStu = () => {
                     </Form.Select>
                   </Form.Group>
                   <br />
-{/* <<<<<<< HEAD */}
 
                   <Form.Group>
                     <Form.Label>
@@ -387,13 +381,11 @@ const AddStu = () => {
                     </Button>
                   </Form.Group>
                   <br />
-{/* ======= */}
                   {/* <Form.Group className='form-group justify-content-center d-flex'>
                     <Button className='px-5 py-2' type='submit' disabled={loading}>
                       {loading ? 'Registering...' : 'Join The Student'}
                     </Button>
                   </Form.Group> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
                 </Form>
               </Card.Body>
             </Card>

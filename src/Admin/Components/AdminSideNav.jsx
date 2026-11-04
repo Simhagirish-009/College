@@ -73,7 +73,6 @@ const AdminSideNav = () => {
   return (
     <>
       {/* Mobile Navbar */}
-      {/* <<<<<<< HEAD */}
       <Navbar
         variant="dark"
         style={{ backgroundColor: "#1e3a8a", paddingLeft: "13px" }}
@@ -89,16 +88,13 @@ const AdminSideNav = () => {
             onClick={handleShow}
           />
         </div>
-        {/* ======= */}
         {/* <Navbar variant='dark' style={{ backgroundColor: '#1e3a8a', paddingLeft: '13px' }} expand="lg" className="d-lg-none mt-2">
         <h3 style={{ color: 'white' }}>Admin Dash Board</h3>
         <Navbar.Toggle style={{ borderColor: 'white', fontSize: '15px', margin: '0px' }} aria-controls="offcanvasNavbar" onClick={handleShow} /> */}
-        {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
       </Navbar>
 
       {/* Offcanvas for mobile view */}
       <Offcanvas show={show} onHide={handleClose} className="d-lg-none">
-        {/* <<<<<<< HEAD */}
         <Offcanvas.Header
           closeButton
           closeVariant="white"
@@ -219,7 +215,6 @@ const AdminSideNav = () => {
               onClick={logOut}
               style={{ fontWeight: "normal", color: "white" }}
             >
-              {/* =======  */}
               {/* <Offcanvas.Header closeButton>
           <Offcanvas.Title>Admin Panel</Offcanvas.Title>
         </Offcanvas.Header>
@@ -278,7 +273,6 @@ const AdminSideNav = () => {
       </Offcanvas>
 
       {/* Desktop Sidebar */}
-      {/* <<<<<<< HEAD */}
       <div
         className="sidenav-container d-none d-lg-flex animate__animated animate__slideInLeft"
         style={{ overflowY: "scroll" }}
@@ -463,7 +457,6 @@ const AdminSideNav = () => {
               <FaCheckDouble /> Staff Leave
             </Nav.Link>
             <Nav.Link as={Link} to="/stuapprove/" style={getLinkStyle('/stuapprove/')}> */}
-              {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
               <FaCheckDouble /> Student Leave
             </Nav.Link>
             <Nav.Link onClick={logOut}>

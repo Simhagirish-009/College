@@ -99,7 +99,6 @@ const StudentDash = () => {
             <Alert variant="danger">{error}</Alert>
           ) : (
             <>
-              {/* <<<<<<< HEAD */}
               <Card style={{ width: "100%" }}>
                 <Card.Body>
                   <ListGroup>
@@ -153,7 +152,6 @@ const StudentDash = () => {
                 </Card.Body>
               </Card>
               <Statastics />
-              {/* ======= */}
               {/* <h2>Staff Members:</h2>
               <Table className="mt-3">
                 <thead>
@@ -211,7 +209,6 @@ const StudentDash = () => {
                   ))}
                 </tbody>
               </Table> */}
-              {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
             </>
           )}
         </div>

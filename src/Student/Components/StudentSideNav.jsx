@@ -74,7 +74,6 @@ const StudentSideNav = () => {
   return (
     <>
       {/* Mobile Navbar */}
-{/* <<<<<<< HEAD */}
       <Navbar
         variant="dark"
         style={{ backgroundColor: "#1e3a8a", paddingLeft: "13px" }}
@@ -90,16 +89,13 @@ const StudentSideNav = () => {
             onClick={handleShow}
           />
         </div>
-{/* ======= */}
       {/* <Navbar variant='dark' style={{ backgroundColor: '#1e3a8a', paddingLeft: '13px' }} expand="lg" className="d-lg-none mt-2">
         <h3 style={{ color: 'white' }}>Student Dash Board</h3>
         <Navbar.Toggle style={{ borderColor: 'white', fontSize: '15px', margin: '0px' }} aria-controls="offcanvasNavbar" onClick={handleShow} /> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
       </Navbar>
 
       {/* Offcanvas for mobile view */}
       <Offcanvas show={show} onHide={handleClose} className="d-lg-none">
-{/* <<<<<<< HEAD */}
         <Offcanvas.Header
           closeButton
           closeVariant="white"
@@ -166,7 +162,6 @@ const StudentSideNav = () => {
               <HiSpeakerphone /> FeedBack
             </Nav.Link>
             <Nav.Link onClick={logOut}>
-{/* ======= */}
         {/* <Offcanvas.Header closeButton>
           <Offcanvas.Title>Student Panel</Offcanvas.Title>
         </Offcanvas.Header>
@@ -188,7 +183,6 @@ const StudentSideNav = () => {
               <FaCheck /> Apply For Leave
             </Nav.Link>
             <Nav.Link onClick={logOut} style={{ fontWeight: 'normal', color: 'white' }}> */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
               <FaPowerOff /> Logout
             </Nav.Link>
           </Nav>
@@ -196,7 +190,6 @@ const StudentSideNav = () => {
       </Offcanvas>
 
       {/* Desktop Sidebar */}
-{/* <<<<<<< HEAD */}
       <div
         className="sidenav-container d-none d-lg-flex animate__animated animate__slideInLeft"
         style={{ overflowY: "scroll" }}
@@ -266,7 +259,6 @@ const StudentSideNav = () => {
               style={getLinkStyle("/stufeedback/")}
             >
               <HiSpeakerphone /> FeedBack
-{/* ======= */}
       {/* <div className="sidenav-container d-none d-lg-flex animate__animated animate__slideInLeft" style={{ overflowY: 'scroll' }}>
         <div className="sidenav-content">
           <h4 className="py-3 text-center sidenav-header">Student Panel</h4>
@@ -294,7 +286,6 @@ const StudentSideNav = () => {
             </Nav.Link>
             <Nav.Link as={Link} to="/stufeedback/" style={getLinkStyle('/stufeedback/')}>
               <FaCheck /> FeedBack */}
-{/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
             </Nav.Link>
             <Nav.Link onClick={logOut}>
               <FaPowerOff /> Logout

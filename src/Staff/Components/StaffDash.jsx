@@ -72,11 +72,9 @@ const StaffDash = () => {
   return (
     <div>
       <Titile />
-      {/* <<<<<<< HEAD */}
       <div className="d-lg-flex d-md-block d-sm-block">
         {/* // ======= */}
         {/* <div className="d-lg-flex"> */}
-        {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
 
         <div className="dash flex-grow-1 p-3">
           <div className="d-lg-flex d-md-flex d-sm-block justify-content-between align-items-center">
@@ -84,7 +82,6 @@ const StaffDash = () => {
             <p>{currentDateTime.toLocaleString()}</p>
           </div>
           <h3>Course Name: {details.course}</h3>
-          {/* <<<<<<< HEAD */}
           <Card style={{ width: "100%" }} className="shadow-md">
             <Card.Body>
               <ListGroup>
@@ -153,7 +150,6 @@ const StaffDash = () => {
             </Card.Body>
           </Card>
           <Statastics />
-          {/* ======= */}
           {/* <ListGroup>
             <ListGroup.Item>Staff Members: {details.staffs}</ListGroup.Item>
             <ListGroup.Item>Students in Course: {details.students}</ListGroup.Item>
@@ -215,7 +211,6 @@ const StaffDash = () => {
               ))}
           </tbody>
          </Table> */}
-          {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
         </div>
       </div>
     </div>
