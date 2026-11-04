@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Titile from "../../Home/Components/Titile";
-import StaffSideNav from "./StaffSideBar";
 import { Form, Card, Button, Spinner, Table } from "react-bootstrap";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -204,7 +203,7 @@ const AddResult = () => {
     <div>
       <Titile />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <StaffSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="dash-container d-flex justify-content-center">
             <Card

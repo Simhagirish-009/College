@@ -1,6 +1,4 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
-import AdminSideNav from "./AdminSideNav";
 import Titile from "../../Home/Components/Titile";
 import {
   Table,
@@ -151,7 +149,7 @@ const ManageStaff = () => {
       <Titile />
       <ToastContainer />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <AdminSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="d-flex justify-content-between">
             <h2>Manage Staff</h2>

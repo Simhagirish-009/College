@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { Navbar, Nav, Offcanvas, Image } from "react-bootstrap";
@@ -15,26 +14,12 @@ import { ImProfile, ImStatsBars } from "react-icons/im";
 import { CgMenuGridR } from "react-icons/cg";
 import axios from "axios";
 import "animate.css";
-// =======
-// import React, { useState, useEffect } from 'react';
-// import { useNavigate, Link, useLocation } from 'react-router-dom';
-// import { Navbar, Nav, Offcanvas , Image } from 'react-bootstrap';
-// import { FaHome, FaCheck, FaBell, FaPowerOff, FaCalendarAlt } from 'react-icons/fa';
-// import { ImProfile, ImStatsBars } from 'react-icons/im';
-// import { CgMenuGridR } from 'react-icons/cg';
-// import axios from 'axios';
-// import 'animate.css';
-
-// // Define role constants
-// const STAFF_ROLE = 2;
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
 const StaffSideNav = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const location = useLocation(); // Get the current location
   const [staffDetails, setStaffDetails] = useState({
-// <<<<<<< HEAD
     username: "",
     email: "",
     gender: "",
@@ -43,23 +28,10 @@ const StaffSideNav = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const email = JSON.parse(localStorage.getItem("email"));
-// =======
-  //   username: '',
-  //   email: '',
-  //   gender: '',
-  //   profilePic: null,
-  //   address: '',
-  // });
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-  // const email = JSON.parse(localStorage.getItem('email'));
-
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
   useEffect(() => {
     const fetchStaffDetails = async () => {
       try {
-// <<<<<<< HEAD
         const response = await axios.get(
           `http://localhost:8000/api/staff_details/?email=${email}`,
           {}
@@ -73,21 +45,6 @@ const StaffSideNav = () => {
         });
       } catch (error) {
         console.error("Error fetching staff details:", error);
-// =======
-      //   const response = await axios.get(`http://localhost:8000/api/staff_details/?email=${email}`,{
-          
-      //   });
-      //   const data = response.data;
-      //   setStaffDetails({
-      //     username : data.details.staff_name,
-      //     email: data.details.email,
-      //     gender: data.details.gender,
-      //     profilePic: data.details.profile_pic,
-      //     address: data.details.address,
-      //   });
-      // } catch (error) {
-      //   console.error('Error fetching staff details:', error);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
       }
     };
 
@@ -100,11 +57,7 @@ const StaffSideNav = () => {
     const confirmed = window.confirm("Are you sure you want to log out?");
     if (confirmed) {
       localStorage.clear();
-// <<<<<<< HEAD
 //       navigate("/login/");
-// =======
-      navigate('/login/');
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
     }
   };
 
@@ -113,20 +66,11 @@ const StaffSideNav = () => {
 
   // Function to get styles for active/inactive links
   const getLinkStyle = (path) => ({
-// <<<<<<< HEAD
     color: isActiveLink(path) ? "white" : "#1E3A8A",
     background: isActiveLink(path)
       ? "linear-gradient(to right, #1E3A8A, #3B82F6)"
       : "transparent",
   });
-// =======
-//     color: isActiveLink(path) ? 'white' : '#1E3A8A',
-//     background: isActiveLink(path) 
-//         ? 'linear-gradient(to right, #1E3A8A, #3B82F6)' 
-//         : 'transparent',
-// });
-
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
   return (
     <>

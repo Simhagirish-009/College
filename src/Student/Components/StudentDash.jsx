@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import StudentSideNav from './StudentSideNav';
 import Titile from '../../Home/Components/Titile';
-// <<<<<<< HEAD
 import { ListGroup, Table, Spinner, Alert, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Statastics from '../../Admin/Components/Statastics';
-// =======
-// import { ListGroup, Table, Spinner, Alert } from 'react-bootstrap';
-// import { useNavigate } from 'react-router-dom';
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
 // Custom hook to fetch user details and associated data
 const useFetchDetails = () => {
@@ -27,10 +21,6 @@ const useFetchDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const navigate = useNavigate()
-// <<<<<<< HEAD
-// =======
-
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
   
   useEffect(() => {
     // Prevent back navigation by pushing the same state repeatedly
@@ -93,7 +83,7 @@ const StudentDash = () => {
     <div>
       <Titile />
       <div className="d-lg-flex">
-        <StudentSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="d-lg-flex d-md-block d-sm-block justify-content-between align-items-center">
             <h1>Welcome {data.username}</h1>
@@ -230,8 +220,4 @@ const StudentDash = () => {
   );
 };
 
-// <<<<<<< HEAD
 // export default StudentDash;
-// =======
-export default StudentDash;
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b

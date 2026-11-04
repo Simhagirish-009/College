@@ -1,7 +1,5 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import StaffSideNav from "./StaffSideBar";
 import Titile from "../../Home/Components/Titile";
 import {
   Button,
@@ -32,25 +30,6 @@ const StaUpdate = () => {
     profilePic: "",
     address: "",
     contact: "",
-// =======
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import StaffSideNav from './StaffSideBar';
-// import Titile from '../../Home/Components/Titile';
-// import { Button, Card, Modal, Form, ListGroup, Image, Spinner } from 'react-bootstrap';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import '../../App.css';
-
-// const StaUpdate = () => {
-//   const [staffDetails, setStaffDetails] = useState({
-//     id: '',
-//     staff_name: '',
-//     email: '',
-//     gender: '',
-//     profilePic: '',
-//     address: '',
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -59,23 +38,15 @@ const StaUpdate = () => {
   const [loading, setLoading] = useState(true); // Loading state for fetching details
   const [updating, setUpdating] = useState(false); // Loading state for updating profile
 
-// <<<<<<< HEAD
   const email = JSON.parse(localStorage.getItem("email"));
-// =======
-  // const email = JSON.parse(localStorage.getItem('email'));
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
   useEffect(() => {
     const fetchStaffDetails = async () => {
       setLoading(true); // Start loading
       try {
-// <<<<<<< HEAD
         const response = await axios.get(
           `http://localhost:8000/api/staff_details/?email=${email}`
         );
-// =======
-        // const response = await axios.get(`http://localhost:8000/api/staff_details/?email=${email}`);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
         const data = response.data;
         setStaffDetails({
           id: data.details.id,
@@ -96,13 +67,8 @@ const StaUpdate = () => {
           address: data.details.address,
         });
       } catch (error) {
-// <<<<<<< HEAD
         console.error("Error fetching staff details:", error);
         toast.error("Error fetching staff details"); // Show Toastify error notification
-// =======
-        // console.error('Error fetching staff details:', error);
-        // toast.error('Error fetching staff details'); // Show Toastify error notification
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
       } finally {
         setLoading(false); // End loading
       }
@@ -132,7 +98,6 @@ const StaUpdate = () => {
     try {
       // Create FormData to handle file upload
       const formData = new FormData();
-// <<<<<<< HEAD
       formData.append("staff_name", formValues.staff_name);
       formData.append("email", formValues.email);
       formData.append("gender", formValues.gender);
@@ -142,16 +107,6 @@ const StaUpdate = () => {
       // Append profile picture if a new one is selected
       if (profilePicFile) {
         formData.append("profile_pic", profilePicFile);
-// =======
-      // formData.append('staff_name', formValues.staff_name);
-      // formData.append('email', formValues.email);
-      // formData.append('gender', formValues.gender);
-      // formData.append('address', formValues.address);
-
-      // // Append profile picture if a new one is selected
-      // if (profilePicFile) {
-      //   formData.append('profile_pic', profilePicFile);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
       }
 
       const response = await axios.put(
@@ -159,29 +114,17 @@ const StaUpdate = () => {
         formData,
         {
           headers: {
-// <<<<<<< HEAD
 //             "Content-Type": "multipart/form-data",
-// =======
-            'Content-Type': 'multipart/form-data',
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
           },
         }
       );
 
       setStaffDetails({ ...formValues, profilePic: response.data.profile_pic });
-// <<<<<<< HEAD
       toast.success("Profile updated successfully!"); // Show success notification
       setShowModal(false);
     } catch (error) {
       console.error("Error updating profile:", error);
       toast.error("Error updating profile"); // Show Toastify error notification
-// =======
-    //   toast.success('Profile updated successfully!'); // Show success notification
-    //   setShowModal(false);
-    // } catch (error) {
-    //   console.error('Error updating profile:', error);
-    //   toast.error('Error updating profile'); // Show Toastify error notification
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
     } finally {
       setUpdating(false); // End updating
     }
@@ -193,7 +136,7 @@ const StaUpdate = () => {
       <ToastContainer />
       {/* <<<<<<< HEAD */}
       <div className="d-lg-flex d-md-block d-sm-block">
-        <StaffSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="dash-container">
             <Card

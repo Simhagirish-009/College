@@ -1,7 +1,5 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import StudentSideNav from "./StudentSideNav";
 import Titile from "../../Home/Components/Titile";
 import {
   Button,
@@ -29,23 +27,6 @@ const StuUpdate = () => {
     gender: "",
     profilePic: "",
     address: "",
-// =======
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import StudentSideNav from './StudentSideNav';
-// import Titile from '../../Home/Components/Titile';
-// import { Button, Card, Modal, Form, ListGroup, Image, Spinner } from 'react-bootstrap';
-// import '../../App.css';
-
-// const StuUpdate = () => {
-//   const [studentDetails, setStudentDetails] = useState({
-//     id: '',
-//     student_name: '',
-//     email: '',
-//     gender: '',
-//     profilePic: '',
-//     address: '',
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -54,24 +35,16 @@ const StuUpdate = () => {
   const [updating, setUpdating] = useState(false);
   const [profilePicFile, setProfilePicFile] = useState(null); // State for the profile picture file
 
-// <<<<<<< HEAD
   const email = JSON.parse(localStorage.getItem("email"));
-// =======
-  // const email = JSON.parse(localStorage.getItem('email'));
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
   // Fetch student details based on email
   useEffect(() => {
     const fetchStudentDetails = async () => {
       setLoading(true);
       try {
-// <<<<<<< HEAD
         const response = await axios.get(
           `http://localhost:8000/api/student_details/?email=${email}`
         );
-// =======
-        // const response = await axios.get(`http://localhost:8000/api/student_details/?email=${email}`);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
         const data = response.data;
         setStudentDetails({
           id: data.details.id,
@@ -90,11 +63,7 @@ const StuUpdate = () => {
           address: data.details.address,
         });
       } catch (error) {
-// <<<<<<< HEAD
         console.error("Error fetching student details:", error);
-// =======
-        // console.error('Error fetching student details:', error);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
       } finally {
         setLoading(false);
       }
@@ -120,7 +89,6 @@ const StuUpdate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setUpdating(true);
-// <<<<<<< HEAD
 
     const formData = new FormData();
     formData.append("student_name", formValues.student_name);
@@ -149,29 +117,6 @@ const StuUpdate = () => {
       setShowModal(false);
     } catch (error) {
       console.error("Error updating profile:", error);
-// =======
-    
-    // const formData = new FormData();
-    // formData.append('student_name', formValues.student_name);
-    // formData.append('email', formValues.email);
-    // formData.append('gender', formValues.gender);
-    // formData.append('address', formValues.address);
-    // if (profilePicFile) {
-    //   formData.append('profile_pic', profilePicFile); // Append the file if it exists
-    // }
-
-    // try {
-    //   const response = await axios.put(`http://localhost:8000/api/student/${formValues.id}/`, formData, {
-    //     headers: {
-    //       'Content-Type': 'multipart/form-data',
-    //     },
-    //   });
-    //   setStudentDetails({ ...formValues, profilePic: response.data.profile_pic });
-
-    //   setShowModal(false);
-    // } catch (error) {
-    //   console.error('Error updating profile:', error);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
     } finally {
       setUpdating(false);
     }
@@ -182,7 +127,7 @@ const StuUpdate = () => {
       <Titile />
 {/* <<<<<<< HEAD */}
       <div className="d-lg-flex d-md-block d-sm-block">
-        <StudentSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="dash-container">
             <Card
@@ -238,7 +183,7 @@ const StuUpdate = () => {
                   </Button>
 {/* ======= */}
       {/* <div className='d-lg-flex d-md-block d-sm-block'>
-        <StudentSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className='dash-container'>
             <Card className='animate__animated animate__fadeIn mt-2' style={{ width: '60%' }}>

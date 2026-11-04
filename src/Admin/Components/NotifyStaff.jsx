@@ -1,6 +1,4 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
-import AdminSideNav from "./AdminSideNav";
 import Titile from "../../Home/Components/Titile";
 import {
   Image,
@@ -123,7 +121,7 @@ const NotifyStaff = () => {
     <div className="root">
       <Titile />
       <div className="d-lg-flex d-md-block d-sm-block">
-        <AdminSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <h2>Notify Staff</h2> <br />
           <div className="d-flex justify-content-between align-items-center mb-3">

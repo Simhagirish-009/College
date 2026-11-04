@@ -2,10 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Card, Form, Alert, Spinner, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { otp_verify, resend_otp } from '../api'; // Import the resend OTP function
-// <<<<<<< HEAD
 import { toast } from 'react-toastify';
-// =======
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
 const Otp = () => {
     const [otp, setOtp] = useState(new Array(6).fill(''));
@@ -69,7 +66,6 @@ const Otp = () => {
                 localStorage.setItem('access_token', response.data.access);
                 localStorage.setItem('refresh_token', response.data.refresh);
                 localStorage.setItem('role', response.data.role);
-// <<<<<<< HEAD
                 toast.success('verification successfull !!!')
                 // Redirect based on user role
                 switch (response.data.role) {
@@ -85,19 +81,6 @@ const Otp = () => {
                     case 3:
                         window.history.forward();
                         navigate('/studash/');
-// =======
-                
-                // Redirect based on user role
-                // switch (response.data.role) {
-                //     case 1:
-                //         navigate('/admindash');
-                //         break;
-                //     case 2:
-                //         navigate('/staffdash');
-                //         break;
-                //     case 3:
-                //         navigate('/studash');
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
                         break;
                     default:
                         break;
@@ -162,17 +145,11 @@ const Otp = () => {
                             <br />
                             {message && <Alert variant='danger'>{message}</Alert>}
                             {seconds === 0 && (
-// <<<<<<< HEAD
                             <div className='btnn'>
                             <Button className='bttn px-5' variant="success" onClick={handleResendOtp} disabled={resending}>
                                 {resending ? <Spinner animation="border" size="sm" /> : 'Resend OTP'}
                             </Button>
                             </div>
-// =======
-                            // <Button variant="success" onClick={handleResendOtp} disabled={resending}>
-                            //     {resending ? <Spinner animation="border" size="sm" /> : 'Resend OTP'}
-                            // </Button>
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
                             )}
                         </Form>
                     </Card.Body>

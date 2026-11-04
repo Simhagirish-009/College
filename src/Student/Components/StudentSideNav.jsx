@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { Navbar, Nav, Offcanvas, Image } from "react-bootstrap";
@@ -14,25 +13,12 @@ import { HiSpeakerphone } from "react-icons/hi";
 import { ImProfile } from "react-icons/im";
 import axios from "axios";
 import "animate.css";
-// =======
-// import React, { useState, useEffect } from 'react';
-// import { useNavigate, Link, useLocation } from 'react-router-dom';
-// import { Navbar, Nav, Offcanvas,Image} from 'react-bootstrap';
-// import { FaHome, FaCheck, FaBell, FaPowerOff, FaCalendarAlt } from 'react-icons/fa';
-// import { ImProfile } from 'react-icons/im';
-// import axios from 'axios';
-// import 'animate.css';
-
-// // Define role constants
-// const STUDENT_ROLE = 3;
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
 const StudentSideNav = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const location = useLocation(); // Get the current location
   const [studentDetails, setStudentDetails] = useState({
-// <<<<<<< HEAD
     username: "",
     email: "",
     gender: "",
@@ -41,47 +27,25 @@ const StudentSideNav = () => {
   });
   const email = JSON.parse(localStorage.getItem("email"));
 
-// =======
-  //   username :'',
-  //   email: '',
-  //   gender: '',
-  //   profilePic: '',
-  //   address: '',
-  // });
-
-  // const email = JSON.parse(localStorage.getItem('email'));
-  
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   useEffect(() => {
     const fetchStudentDetails = async () => {
       try {
-// <<<<<<< HEAD
         const response = await axios.get(
           `http://localhost:8000/api/student_details/?email=${email}`
         );
         const data = response.data;
         setStudentDetails({
           username: data.details.student_name,
-// =======
-        // const response = await axios.get(`http://localhost:8000/api/student_details/?email=${email}`);
-        // const data = response.data;
-        // setStudentDetails({
-        //   username : data.details.student_name,
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
           email: data.details.email,
           gender: data.details.gender,
           profilePic: data.details.profile_pic,
           address: data.details.address,
         });
       } catch (error) {
-// <<<<<<< HEAD
         console.error("Error fetching student details:", error);
-// =======
-        // console.error('Error fetching student details:', error);
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
       }
     };
 
@@ -94,30 +58,18 @@ const StudentSideNav = () => {
     const confirmed = window.confirm("Are you sure you want to log out?");
     if (confirmed) {
       localStorage.clear();
-// <<<<<<< HEAD
       navigate("/login/");
-// =======
-      // navigate('/login/');
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
     }
   };
 
   const isActiveLink = (path) => location.pathname === path;
 
   const getLinkStyle = (path) => ({
-// <<<<<<< HEAD
     color: isActiveLink(path) ? "white" : "#1E3A8A",
     background: isActiveLink(path)
       ? "linear-gradient(to right, #1E3A8A, #3B82F6)"
       : "transparent",
   });
-// =======
-//     color: isActiveLink(path) ? 'white' : '#1E3A8A',
-//     background: isActiveLink(path) 
-//         ? 'linear-gradient(to right, #1E3A8A, #3B82F6)' 
-//         : 'transparent',
-// });
-// >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
   return (
     <>

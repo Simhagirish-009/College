@@ -1,6 +1,4 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
-import StaffSideNav from "./StaffSideBar";
 import Titile from "../../Home/Components/Titile";
 import axios from "axios";
 import { ListGroup, Table, Card } from "react-bootstrap";
@@ -12,43 +10,19 @@ const StaffDash = () => {
     username: "",
     email: "",
     course: "none",
-    // =======
-    // import React, { useState, useEffect } from 'react';
-    // import StaffSideNav from './StaffSideBar';
-    // import Titile from '../../Home/Components/Titile';
-    // import axios from 'axios';
-    // import { ListGroup, Table } from 'react-bootstrap';
-    // import { useNavigate } from 'react-router-dom';
-
-    // const StaffDash = () => {
-    //   const [currentDateTime, setCurrentDateTime] = useState(new Date());
-    //   const [details, setDetails] = useState({
-    //     username: '',
-    //     email: '',
-    //     course: 'none',
-    // >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
     staffs: 0,
     students: 0,
     subjects: 0,
   });
-  // <<<<<<< HEAD
   const [students, setStudents] = useState([]);
   const [subject, setSubject] = useState([]);
   const [staff, setStaff] = useState([]);
   const navigate = useNavigate();
 
-  // =======
-  // const [students,setStudents] = useState([])
-  // const [subject,setSubject] = useState([])
-  // const [staff,setStaff] = useState([])
-  // const navigate = useNavigate()
-
-  // >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
   useEffect(() => {
     // Prevent back navigation by pushing the same state repeatedly
     const handlePopState = (event) => {
       event.preventDefault();
-      // <<<<<<< HEAD
       window.history.pushState(null, "", window.location.href); // Keep user on staffdash
       navigate("/staffdash", { replace: true }); // Redirect to staffdash again
     };
@@ -61,21 +35,6 @@ const StaffDash = () => {
       window.removeEventListener("popstate", handlePopState); // Clean up on component unmount
     };
   }, [navigate]);
-  // =======
-  //     window.history.pushState(null, '', window.location.href); // Keep user on staffdash
-  //     navigate('/staffdash', { replace: true }); // Redirect to staffdash again
-  //   };
-
-  //   // Push state once on load and set up listener
-  //   window.history.pushState(null, '', window.location.href); // Disable back button
-  //   window.addEventListener('popstate', handlePopState); // Listen for popstate (back navigation)
-
-  //   return () => {
-  //     window.removeEventListener('popstate', handlePopState); // Clean up on component unmount
-  //   };
-  // }, [navigate]);
-
-  // >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -86,17 +45,11 @@ const StaffDash = () => {
 
   useEffect(() => {
     const fetchUserDetails = async () => {
-      // <<<<<<< HEAD
       const email = JSON.parse(localStorage.getItem("email"));
       try {
         const response = await axios.get(
           `http://localhost:8000/api/count_stu/?email=${email}`
         );
-        // =======
-        // const email = JSON.parse(localStorage.getItem('email'));
-        // try {
-        //   const response = await axios.get(`http://localhost:8000/api/count_stu/?email=${email}`);
-        // >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
         setDetails({
           username: response.data.username,
           email: email,
@@ -105,21 +58,12 @@ const StaffDash = () => {
           students: response.data.students,
           subjects: response.data.subjects,
         });
-        // <<<<<<< HEAD
         setStudents(response.data.student);
         setSubject(response.data.subject);
         setStaff(response.data.staff);
       } catch (error) {
         localStorage.clear();
         console.error("Error fetching user details:", error);
-        // =======
-        //   setStudents(response.data.student)
-        //   setSubject(response.data.subject)
-        //   setStaff(response.data.staff)
-        // } catch (error) {
-        //   localStorage.clear()
-        //   console.error('Error fetching user details:', error);
-        // >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b
       }
     };
     fetchUserDetails();
@@ -133,7 +77,7 @@ const StaffDash = () => {
         {/* // ======= */}
         {/* <div className="d-lg-flex"> */}
         {/* >>>>>>> 959a3b8c4a74156b45156af0d3d74724bba9948b */}
-        <StaffSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="d-lg-flex d-md-flex d-sm-block justify-content-between align-items-center">
             <h1>Welcome {details.username}</h1>

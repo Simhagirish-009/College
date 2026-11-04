@@ -1,11 +1,9 @@
-// <<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { Form, Card, Button, Spinner } from "react-bootstrap";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify styles
 import Title from "../../Home/Components/Titile";
-import StudentSideNav from "./StudentSideNav";
 const StuFeed = () => {
   const [feedback, setFeedback] = useState("");
   const [error, setError] = useState("");
@@ -96,7 +94,7 @@ const StuFeed = () => {
     <div>
       <Title />
       <div className="d-lg-flex d-md-block d-sm-block ">
-        <StudentSideNav />
+
         <div className="dash flex-grow-1 p-3">
           <div className="dash-container d-flex flex-column align-items-center">
             <Card

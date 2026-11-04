@@ -5,7 +5,6 @@ import { FaInfo } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
 import '../../App.css';
-// <<<<<<< HEAD
   
 const NavBar = () => {
   return (
